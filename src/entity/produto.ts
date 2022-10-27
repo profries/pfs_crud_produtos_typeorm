@@ -8,6 +8,6 @@ export class Produto extends BaseEntity{
     @Column()
     nome!: string;
 
-    @Column()
+    @Column("real")
     preco!: number;
 }

@@ -1,7 +1,7 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm";
 import { Produto } from "./entity/produto"
-export const AppDataSource = new DataSource({
+const AppDataSource = new DataSource({
     type: "postgres",
     host: "localhost",
     port: 5432,
@@ -13,4 +13,16 @@ export const AppDataSource = new DataSource({
     entities: [Produto],
     subscribers: [],
     migrations: [],
+
 })
+AppDataSource
+    .initialize()
+    .then(() => {
+        console.log(`Data Source inicializado`);
+    })
+    .catch((err) => {
+        console.error(`Data Source com erro`, err);
+    })
+
+export default AppDataSource;
+
