@@ -15,14 +15,6 @@ const AppDataSource = new DataSource({
     migrations: [],
 
 })
-AppDataSource
-    .initialize()
-    .then(() => {
-        console.log(`Data Source inicializado`);
-    })
-    .catch((err) => {
-        console.error(`Data Source com erro`, err);
-    })
 
 export default AppDataSource;
 
